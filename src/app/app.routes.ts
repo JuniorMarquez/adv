@@ -16,8 +16,8 @@ const app_routes: Routes = [
 	{path:'login',component:LoginComponent},
 	{path:'affiliates',component:AffiliatesComponent},		
 	{path:'partners',component:PartnersComponent},
-	{path:'partner-detail',component:PartnerDetailComponent},
-	{path:'affiliate-detail',component:AffiliateDetailComponent},
+	{path:'partner-detail/:id',component:PartnerDetailComponent},
+	{path:'affiliate-detail/:id',component:AffiliateDetailComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

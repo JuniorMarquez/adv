@@ -25,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {TixsService} from './services/tixs.service';
 import {ProductInfoService} from './services/product-info.service';
 import {CarService} from './services/car.service';
+import {DataApiService} from './services/data-api.service';
 
 
 //ANIMATIONS
@@ -105,7 +106,8 @@ import { AffiliateDetailComponent } from './components/affiliate-detail/affiliat
   ],
  entryComponents:[ DialogOverviewExampleDialog ],
   providers: [
-    TixsService
+    TixsService,
+    DataApiService
       ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

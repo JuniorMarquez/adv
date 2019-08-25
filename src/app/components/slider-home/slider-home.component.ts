@@ -1,4 +1,5 @@
 import { Component, OnInit,Inject } from '@angular/core';
+import {DataApiService} from '../../services/data-api.service';
 
 declare var $: any;
 
@@ -9,14 +10,24 @@ declare var $: any;
 })
 export class SliderHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataApi: DataApiService) { }
+
+
+
 
 	ngOnInit(): void {
+  this.getAllTixs();
    		//this.filter();
   		//$.getScript('assets/js/collage.js');
  	//	$.getScript('assets/js/custom.js');
 		//this._ps.imagesG=[];
 		//this.product=[]	;	
   	}
+
+    getAllTixs(){
+      this.dataApi.getAllTixs()
+      .subscribe((tixs) => console.log(tixs));
+    }
+
 
 }
