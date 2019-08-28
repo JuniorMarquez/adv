@@ -4,7 +4,8 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { TixsService } from "../../services/tixs.service";
 import { ProductInfoService } from "../../services/product-info.service";
 import { CarService } from "../../services/car.service";
-
+import {DataApiService} from '../../services/data-api.service';
+import { TixInterface } from '../../models/tix-interface'; 
 
 export interface DialogData {
   quan:number;
@@ -36,10 +37,17 @@ export class CatalogComponent {
 	menu:any={};
 	quan: number = 3;
 	private _album: Array<string> = [];
-	constructor(public _ps:TixsService, public dialog: MatDialog, public _pi:ProductInfoService,public _ca:CarService) {
+	constructor(
+    public _ps:TixsService, 
+    public dialog: MatDialog, 
+    public _pi:ProductInfoService,
+    public _ca:CarService,
+    private dataApi: DataApiService
+    ) {
 		this.loadImages,open,close
 	}
 
+ private tixs:TixInterface;
 
 	openDialog(product): void {
 		//console.log('Producto: '+product.productName);
@@ -79,6 +87,15 @@ export class CatalogComponent {
 		}
 		
 	}
+
+   getAllTixs(){
+//      this.dataApi.getAllTixs().subscribe(tixs => console.log(tixs));
+        this.dataApi
+        .getAllTixs()
+        .subscribe((tixs: TixInterface) => (this.tixs=tixs));
+    }
+
+
 	public filter(){
 		//alert("tamano: "+this._ps.products.length);
 		 for (var i=0;i<this._ps.products.length;i++){
@@ -88,6 +105,7 @@ export class CatalogComponent {
       }
 	}
    	ngOnInit(): void {
+        this.getAllTixs();
    		//this.filter();
   		//$.getScript('assets/js/collage.js');
  		//$.getScript('assets/js/custom.js');
@@ -112,14 +130,17 @@ export class DialogOverviewExampleDialog {
     quan:{};
   }
   	constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,@Inject(MAT_DIALOG_DATA) public data: DialogData, public _pi:ProductInfoService) {
+      private dataApi: DataApiService,
+      public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+      @Inject(MAT_DIALOG_DATA) public data: DialogData, 
+      public _pi:ProductInfoService
+      ) {
   		this.ini();
     }
      public ini(){
      	for(var i = 0; i <20; i++){
      		this.quan[i]=0;
      	} 
-     	
     }
 	changeAdd(item,i): void{
 		this.quan[i]=this.quan[i]+1;

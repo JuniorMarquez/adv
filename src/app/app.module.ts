@@ -58,6 +58,7 @@ import { SideleftComponent } from './components/sideleft/sideleft.component';
 import { AffiliatesComponent } from './components/affiliates/affiliates.component';
 import { PartnerDetailComponent } from './components/partner-detail/partner-detail.component';
 import { AffiliateDetailComponent } from './components/affiliate-detail/affiliate-detail.component';
+import { TixDetailComponent } from './components/tix-detail/tix-detail.component';
 
 
 
@@ -78,7 +79,8 @@ import { AffiliateDetailComponent } from './components/affiliate-detail/affiliat
     SideleftComponent,
     AffiliatesComponent,
     PartnerDetailComponent,
-    AffiliateDetailComponent
+    AffiliateDetailComponent,
+    TixDetailComponent
   ],
   imports: [
     BrowserModule,

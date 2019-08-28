@@ -5,4 +5,4 @@ export { PartnersComponent } from "./partners/partners.component";
 export { AffiliatesComponent } from "./affiliates/affiliates.component";
 export { AffiliateDetailComponent } from "./affiliate-detail/affiliate-detail.component";
 export { PartnerDetailComponent } from "./partner-detail/partner-detail.component";
-
+export { TixDetailComponent } from "./tix-detail/tix-detail.component";
