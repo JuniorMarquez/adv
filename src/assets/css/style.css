@@ -4478,7 +4478,7 @@ span.featured-tour {
     position: relative;
     width: 100%;
     padding: 14px 20px;
-    border-bottom: 1px solid #f4f4f4
+    border-bottom: 0px solid #f4f4f4
 }
 
 .destination-place,.discount-flick,.featured {
@@ -4519,7 +4519,8 @@ span.featured-tour {
 .destination-place {
     bottom: 20px;
     left: 20px;
-    font-size: 16px
+    font-size: 16px;
+    right: 20px
 }
 
 .destination-place a:focus,.destination-place a:hover,.destination-place>* {

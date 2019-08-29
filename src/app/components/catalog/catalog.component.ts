@@ -26,6 +26,35 @@ export interface DialogData {
   templateUrl: './catalog.component.html'
 })
 export class CatalogComponent {
+
+   title = 'angularowlslider';
+  customOptions: any = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
+
+
+  
   name: string;
   size:number;
   car:any[]=[];
@@ -47,7 +76,7 @@ export class CatalogComponent {
 		this.loadImages,open,close
 	}
 
- private tixs:TixInterface;
+ public tixs:TixInterface;
 
 	openDialog(product): void {
 		//console.log('Producto: '+product.productName);

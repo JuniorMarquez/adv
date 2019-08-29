@@ -1,3 +1,6 @@
+
+
+
 <section class="gray-bg">
       <div class="container">
         
@@ -5,20 +8,26 @@
           <div class="col-md-12">
             <div class="heading">
               <!-- <span class="theme-cl">Select Tour</span> -->
-              <h1 >Top Tour and Activities</h1>
+              <h1 >Top Tixs and Activities</h1>
             </div>
           </div>
         </div>
         
-        <div class="row">
-          <div class="list-slider">
+<div >
+ 
+    <owl-carousel-o [options]="customOptions">
+
+
+
+    <ng-template carouselSlide *ngFor="let tix of tixs">
+      <div class="list-slider">
           
             <!-- Single Tour -->
             <div class="list-slide-box">
               <article class="tour-box style-1">
               
                 <div class="tour-box-image">
-                  <figure  style="height: 280px;">
+                  <figure  >
                     <a href="tour-detail.html">
                       <img src="assets/img/tour/tour-4.jpg" class="img-responsive listing-box-img" alt="" />
                       <div class="list-overlay"></div>
@@ -29,7 +38,7 @@
                         <i class="ti ti-car"></i><span>22h</span>
                       </div>
                       <h4 class="destination-place">
-                        <a href="home-3.html#">New York, Sean Pavone</a>
+                        <a href="home-3.html#">{{tix.productName}}</a>
                       </h4>
                       <span class="featured-tour"><i class="fa fa-star"></i></span>
                       <a href="home-3.html#" class="list-like left"><i class="ti-heart"></i></a>
@@ -75,256 +84,18 @@
               </article>
             </div>
           
-            <!-- Single Tour -->
-            <div class="list-slide-box">
-              <article class="tour-box style-1">
-              
-                <div class="tour-box-image">
-                  <figure  style="height: 280px;">
-                    <a href="tour-detail.html">
-                      <img src="assets/img/tour/tour-5.jpg" class="img-responsive listing-box-img" alt="" />
-                      <div class="list-overlay"></div>
-                      <div class="entry-bookmark">                                   
-                        <a href="home-3.html#"><i class="ti-bookmark"></i></a>
-                      </div>
-                      <div class="tour-time">
-                        <i class="ti ti-car"></i><span>17h</span>
-                      </div>
-                      <h4 class="destination-place">
-                        <a href="home-3.html#">Dubai, United Arab Emirates</a>
-                      </h4>
-                      <span class="featured-tour"><i class="fa fa-star"></i></span>
-                      <a href="home-3.html#" class="list-like left"><i class="ti-heart"></i></a>
-                    </a>
-                  </figure>
-                </div>
-                
-                <div class="entry-meta">
-                  <div class="meta-item meta-author">
-                    <div class="coauthors">
-                      <span class="vcard author">
-                        <span class="fn">
-                          <a href="home-3.html#"><img alt="" src="assets/img/user-5.jpg" class="avatar avatar-24" height="24" width="24">Lisa Scholfield</a>
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="meta-item meta-comment fl-right">
-                    <i class="ti-comment-alt"></i><span>15</span>
-                  </div>
-                  <div class="meta-item meta-rating fl-right">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half"></i>
-                  </div>
-                </div>
-
-                <div class="inner-box">
-                  <div class="box-inner-ellipsis">
-                    <h4 class="entry-title">
-                      <a href="home-3.html#">Saudi Arabia</a>
-                    </h4>
-                    <div class="price-box">
-                      <div class="tour-price fl-right">
-                        <i class="ti ti-user"></i><span class="theme-cl f-bold">$117</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      
-              </article>
-            </div>
-          
-            <!-- Single Tour -->
-            <div class="list-slide-box">
-              <article class="tour-box style-1">
-              
-                <div class="tour-box-image">
-                  <figure  style="height: 280px;">
-                    <a href="tour-detail.html">
-                      <img src="assets/img/tour/tour-6.jpg" class="img-responsive listing-box-img" alt="" />
-                      <div class="list-overlay"></div>
-                      <div class="entry-bookmark">                                   
-                        <a href="home-3.html#"><i class="ti-bookmark"></i></a>
-                      </div>
-                      <div class="tour-time">
-                        <i class="ti ti-car"></i><span>1 day</span>
-                      </div>
-                      <h4 class="destination-place">
-                        <a href="home-3.html#">Paris, France. neirfy</a>
-                      </h4>
-                      <span class="featured-tour"><i class="fa fa-star"></i></span>
-                      <a href="home-3.html#" class="list-like left"><i class="ti-heart"></i></a>
-                    </a>
-                  </figure>
-                </div>
-                
-                <div class="entry-meta">
-                  <div class="meta-item meta-author">
-                    <div class="coauthors">
-                      <span class="vcard author">
-                        <span class="fn">
-                          <a href="home-3.html#"><img alt="" src="assets/img/user-6.jpg" class="avatar avatar-24" height="24" width="24">Lisa Scholfield</a>
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="meta-item meta-comment fl-right">
-                    <i class="ti-comment-alt"></i><span>22</span>
-                  </div>
-                  <div class="meta-item meta-rating fl-right">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half"></i>
-                  </div>
-                </div>
-
-                <div class="inner-box">
-                  <div class="box-inner-ellipsis">
-                    <h4 class="entry-title">
-                      <a href="home-3.html#">Singapore</a>
-                    </h4>
-                    <div class="price-box">
-                      <div class="tour-price fl-right">
-                        <i class="ti ti-user"></i><span class="theme-cl f-bold">$310</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      
-              </article>
-            </div>
-            
-            <!-- Single Tour -->
-            <div class="list-slide-box">
-              <article class="tour-box style-1">
-              
-                <div class="tour-box-image">
-                  <figure  style="height: 280px;">
-                    <a href="tour-detail.html">
-                      <img src="assets/img/tour/tour-2.jpg" class="img-responsive listing-box-img" alt="" />
-                      <div class="list-overlay"></div>
-                      <div class="entry-bookmark">                                   
-                        <a href="home-3.html#"><i class="ti-bookmark"></i></a>
-                      </div>
-                      <div class="tour-time">
-                        <i class="ti ti-car"></i><span>70h</span>
-                      </div>
-                      <h4 class="destination-place">
-                        <a href="home-3.html#">London, England. AndreaAstes</a>
-                      </h4>
-                      <span class="featured-tour"><i class="fa fa-star"></i></span>
-                      <a href="home-3.html#" class="list-like left"><i class="ti-heart"></i></a>
-                    </a>
-                  </figure>
-                </div>
-                
-                <div class="entry-meta">
-                  <div class="meta-item meta-author">
-                    <div class="coauthors">
-                      <span class="vcard author">
-                        <span class="fn">
-                          <a href="home-3.html#"><img alt="" src="assets/img/user-7.jpg" class="avatar avatar-24" height="24" width="24">Lisa Scholfield</a>
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="meta-item meta-comment fl-right">
-                    <i class="ti-comment-alt"></i><span>15</span>
-                  </div>
-                  <div class="meta-item meta-rating fl-right">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half"></i>
-                  </div>
-                </div>
-
-                <div class="inner-box">
-                  <div class="box-inner-ellipsis">
-                    <h4 class="entry-title">
-                      <a href="home-3.html#">United Kingdom</a>
-                    </h4>
-                    <div class="price-box">
-                      <div class="tour-price fl-right">
-                        <i class="ti ti-user"></i><span class="theme-cl f-bold">$217</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      
-              </article>
-            </div>
-            
-            <!-- Single Tour -->
-            <div class="list-slide-box">
-              <article class="tour-box style-1">
-              
-                <div class="tour-box-image">
-                  <figure  style="height: 280px;">
-                    <a href="tour-detail.html">
-                      <img src="assets/img/tour/tour-7.jpg" class="img-responsive listing-box-img" alt="" />
-                      <div class="list-overlay"></div>
-                      <div class="entry-bookmark">                                   
-                        <a href="home-3.html#"><i class="ti-bookmark"></i></a>
-                      </div>
-                      <div class="tour-time">
-                        <i class="ti ti-car"></i><span>2 days</span>
-                      </div>
-                      <h4 class="destination-place">
-                        <a href="home-3.html#">Bangkok, Thailand. thitivong</a>
-                      </h4>
-                      <span class="featured-tour"><i class="fa fa-star"></i></span>
-                      <a href="home-3.html#" class="list-like left"><i class="ti-heart"></i></a>
-                    </a>
-                  </figure>
-                </div>
-                
-                <div class="entry-meta">
-                  <div class="meta-item meta-author">
-                    <div class="coauthors">
-                      <span class="vcard author">
-                        <span class="fn">
-                          <a href="home-3.html#"><img alt="" src="assets/img/user-8.jpg" class="avatar avatar-24" height="24" width="24">Lisa Scholfield</a>
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="meta-item meta-comment fl-right">
-                    <i class="ti-comment-alt"></i><span>20</span>
-                  </div>
-                  <div class="meta-item meta-rating fl-right">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half"></i>
-                  </div>
-                </div>
-
-                <div class="inner-box">
-                  <div class="box-inner-ellipsis">
-                    <h4 class="entry-title">
-                      <a href="home-3.html#">Hong Kong</a>
-                    </h4>
-                    <div class="price-box">
-                      <div class="tour-price fl-right">
-                        <i class="ti ti-user"></i><span class="theme-cl f-bold">$177</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      
-              </article>
-            </div>
+         
           
           </div>
-        </div>
+
+    </ng-template>  
+   
+  </owl-carousel-o>
+  
+</div>
+
+
+
     
       </div>
     </section>

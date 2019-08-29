@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+//import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 //RUTAS
@@ -95,7 +97,8 @@ import { TixDetailComponent } from './components/tix-detail/tix-detail.component
     MatNativeDateModule,MatStepperModule,
     ReactiveFormsModule,
     MatBadgeModule,
-    MatTableModule
+    MatTableModule,
+CarouselModule
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
