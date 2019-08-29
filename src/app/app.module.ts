@@ -28,6 +28,8 @@ import {TixsService} from './services/tixs.service';
 import {ProductInfoService} from './services/product-info.service';
 import {CarService} from './services/car.service';
 import {DataApiService} from './services/data-api.service';
+import {ScrollTopService} from './services/scroll-top.service';
+
 
 
 //ANIMATIONS
@@ -112,7 +114,8 @@ CarouselModule
  entryComponents:[ DialogOverviewExampleDialog ],
   providers: [
     TixsService,
-    DataApiService
+    DataApiService,
+    ScrollTopService
       ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

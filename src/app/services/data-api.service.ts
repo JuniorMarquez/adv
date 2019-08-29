@@ -27,6 +27,7 @@ export class DataApiService {
 
 	}
 	getTixById(id:string){
+		console.log(id);
 		const url_api='https://www.thetixsapp.com:3000/api/product/${id}';
 		return (this.tix = this.http.get(url_api));
 	}
