@@ -28,8 +28,11 @@ export class DataApiService {
 	}
 	getTixById(id:string){
 		console.log(id);
-		const url_api='https://www.thetixsapp.com:3000/api/product/${id}';
-		return (this.tix = this.http.get(url_api));
+		let indice = id;
+		const url_api=`https://www.thetixsapp.com:3000/api/product/${indice}`;
+		this.tix = this.http.get(url_api);
+//		this.tix.front = this.tix.images[0];
+		return (this.tix);
 	}
 	getOffers(){
 		const url_api='https://www.thetixsapp.com:3000/api/product?filter[where][Offers]=1';

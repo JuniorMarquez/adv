@@ -5382,7 +5382,7 @@ ul.amenities.fourth li {
 
 .list-thumb-box {
     position: relative;
-    min-height: 250px;
+    /*min-height: 250px;*/
     border-radius: 6px;
     overflow: hidden
 }

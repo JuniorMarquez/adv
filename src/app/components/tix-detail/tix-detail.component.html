@@ -10,10 +10,9 @@
 						<div class="tab" role="tabpanel">
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation class="active><a href="restaurant-detail.html#Photos" aria-controls="messages" role="tab" data-toggle="tab"><i class="ti-gallery"></i>Photos</a></li>
-								<li role="presentation" ><a href="restaurant-detail.html#Overview" aria-controls="home" role="tab" data-toggle="tab"><i class="ti-user"></i>Overview</a></li>
+								<li role="presentation class="active><a href="restaurant-detail.html#Photos" aria-controls="messages" role="tab" data-toggle="tab"><i class="ti-gallery"></i>Overview</a></li>
+							
 								<li role="presentation"><a href="restaurant-detail.html#Features" aria-controls="profile" role="tab" data-toggle="tab"><i class="ti-settings"></i>Features</a></li>
-								<li role="presentation"><a href="restaurant-detail.html#Review" aria-controls="messages" role="tab" data-toggle="tab"><i class="ti-thumb-up"></i>Review</a></li>
 								
 							</ul>
 							<!-- Tab panes -->
@@ -44,8 +43,9 @@
 											<div class="row">
 											
 												<div class="col-md-6 col-sm-6">
-													<div class="list-thumb-box">
-														<img src="assets/img/res/res-2.jpg" class="img-responsive" alt="" />
+													<div class="list-thumb-box" *ngFor="let item of tix.images; let i=index;" >
+														<img 
+														src="{{item}}"  *ngIf="i === 0"class="img-responsive" alt="" />
 														<a href="restaurant-detail.html#" class="list-like left"><i class="ti-heart"></i></a>
 														<h5>4.8/<sub class="theme-cl">5</sub></h5>
 													</div>
@@ -145,35 +145,7 @@
 								</div>
 								
 								<!-- Amenities -->
-								<div class="row">
-									<div class="tr-single-box">
-										<div class="tr-single-header">
-											<h4><i class="ti-crown"></i>Amenities</h4>
-										</div>
-										<div class="tr-single-body">
-											<ul class="amenities third">
-												<li>Satellite TV</li>
-												<li>Coffeemaker</li>
-												<li>Hair Dryer</li>
-												<li>Swimming Pool</li>
-												<li>Room Service</li>
-												<li>Luxury Bedding</li>
-												<li>Good Showers</li>
-												<li>Free Parking</li>
-												<li>Free Wifi</li>
-												<li>Bath towel</li>
-												<li>Free Coffee</li>
-												<li>Pets Allow</li>
-												<li>Hot Water</li>
-												<li>Attached garage </li>
-												<li>Elevator</li>
-												<li>Spa/Sauna</li>
-												<li>Indoor pool </li>
-												<li>Security cameras </li>
-											</ul>
-										</div>
-									</div>
-								</div>
+								
 								<div class="row">
 									<div class="tr-single-box">
 										<div class="tr-single-header">
@@ -181,51 +153,13 @@
 										</div>
 										<div class="tr-single-body">
 											<ul class="gallery-list">
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-1.jpg">
-														<img src="assets/img/destination/des-1.jpg" class="img-responsive" alt="">
+												<li *ngFor="let image of tix.images">
+													<a data-fancybox="gallery" href="{{image}}">
+														<img src="{{image}}" class="img-responsive" alt="">
 													</a>
 												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-2.jpg">
-														<img src="assets/img/destination/des-2.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-3.jpg">
-														<img src="assets/img/destination/des-3.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-4.jpg">
-														<img src="assets/img/destination/des-4.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-5.jpg">
-														<img src="assets/img/destination/des-5.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-6.jpg">
-														<img src="assets/img/destination/des-6.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-7.jpg">
-														<img src="assets/img/destination/des-7.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-8.jpg">
-														<img src="assets/img/destination/des-8.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
-												<li>
-													<a data-fancybox="gallery" href="assets/img/destination/des-9.jpg">
-														<img src="assets/img/destination/des-9.jpg" class="img-responsive" alt="">
-													</a>
-												</li>
+
+
 											</ul>
 										</div>
 									</div>
@@ -384,14 +318,32 @@
 							<!-- ============ Features =================== -->
 							<div role="tabpanel" class="tab-pane fade in" id="Features">
 								
-								<!-- About Features -->
 								<div class="row">
 									<div class="tr-single-box">
 										<div class="tr-single-header">
-											<h4><i class="ti-files"></i>About Features</h4>
+											<h4><i class="ti-crown"></i>Amenities</h4>
 										</div>
 										<div class="tr-single-body">
-											<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+											<ul class="amenities third">
+												<li>Satellite TV</li>
+												<li>Coffeemaker</li>
+												<li>Hair Dryer</li>
+												<li>Swimming Pool</li>
+												<li>Room Service</li>
+												<li>Luxury Bedding</li>
+												<li>Good Showers</li>
+												<li>Free Parking</li>
+												<li>Free Wifi</li>
+												<li>Bath towel</li>
+												<li>Free Coffee</li>
+												<li>Pets Allow</li>
+												<li>Hot Water</li>
+												<li>Attached garage </li>
+												<li>Elevator</li>
+												<li>Spa/Sauna</li>
+												<li>Indoor pool </li>
+												<li>Security cameras </li>
+											</ul>
 										</div>
 									</div>
 								</div>
@@ -421,155 +373,7 @@
 								
 							</div>
 							
-							<!-- ============ Review =================== -->
-							<div role="tabpanel" class="tab-pane fade in" id="Review">
-								
-								<!-- Review -->
-								<div class="row">
-									<div class="tr-single-box">
-										<div class="tr-single-header">
-											<h4><i class="ti-write"></i>All Review</h4>
-										</div>
-										<div class="tr-single-body">
-											
-											<!-- Single Review -->
-											<div class="review-box">
-												<div class="review-thumb">
-													<img src="assets/img/user-1.jpg" class="img-responsive img-circle" alt="" />
-												</div>
-												
-												<div class="review-box-content">
-													<div class="reviewer-rate">
-														<p><i class="fa fa-star cl-warning"></i>4.7/<span>5</span></p>
-													</div>
-													<div class="review-user-info">
-														<h4>Daniel Dicoss</h4>
-														<p>Et Harum Quidem Rerum Facilis Est Et Expedita Distinctio. Nam Libero Tempore, Cum Soluta Nobis Est Eligendi Optio Cumque Nihil Impedit Quo Minus Id Quod Maxime Placeat Facere Possimus</p>
-													</div>
-													<div class="review-lc text-right">
-														<a href="restaurant-detail.html#"><i class="ti-heart"></i>87</a>
-														<a href="restaurant-detail.html#"><i class="ti-comment"></i>52</a>
-													</div>
-												</div>
-												
-											</div>
-											
-											<!-- Single Review -->
-											<div class="review-box">
-												<div class="review-thumb">
-													<img src="assets/img/user-2.jpg" class="img-responsive img-circle" alt="" />
-												</div>
-												
-												<div class="review-box-content">
-													<div class="reviewer-rate">
-														<p><i class="fa fa-star cl-warning"></i>4.4/<span>5</span></p>
-													</div>
-													<div class="review-user-info">
-														<h4>Archita Singh</h4>
-														<p>Et Harum Quidem Rerum Facilis Est Et Expedita Distinctio. Nam Libero Tempore, Cum Soluta Nobis Est Eligendi Optio Cumque Nihil Impedit Quo Minus Id Quod Maxime Placeat Facere Possimus</p>
-													</div>
-													<div class="review-lc text-right">
-														<a href="restaurant-detail.html#"><i class="ti-heart"></i>65</a>
-														<a href="restaurant-detail.html#"><i class="ti-comment"></i>78</a>
-													</div>
-												</div>
-												
-											</div>
-											
-											<!-- Single Review -->
-											<div class="review-box">
-												<div class="review-thumb">
-													<img src="assets/img/user-3.jpg" class="img-responsive img-circle" alt="" />
-												</div>
-												
-												<div class="review-box-content">
-													<div class="reviewer-rate">
-														<p><i class="fa fa-star cl-warning"></i>5.0/<span>5</span></p>
-													</div>
-													<div class="review-user-info">
-														<h4>Devesh Patri</h4>
-														<p>Et Harum Quidem Rerum Facilis Est Et Expedita Distinctio. Nam Libero Tempore, Cum Soluta Nobis Est Eligendi Optio Cumque Nihil Impedit Quo Minus Id Quod Maxime Placeat Facere Possimus</p>
-													</div>
-													<div class="review-lc text-right">
-														<a href="restaurant-detail.html#"><i class="ti-heart"></i>110</a>
-														<a href="restaurant-detail.html#"><i class="ti-comment"></i>47</a>
-													</div>
-												</div>
-												
-											</div>
-											
-											<!-- Single Review -->
-											<div class="review-box">
-												<div class="review-thumb">
-													<img src="assets/img/user-4.jpg" class="img-responsive img-circle" alt="" />
-												</div>
-												
-												<div class="review-box-content">
-													<div class="reviewer-rate">
-														<p><i class="fa fa-star cl-warning"></i>4.9/<span>5</span></p>
-													</div>
-													<div class="review-user-info">
-														<h4>Ruchi Sethi</h4>
-														<p>Et Harum Quidem Rerum Facilis Est Et Expedita Distinctio. Nam Libero Tempore, Cum Soluta Nobis Est Eligendi Optio Cumque Nihil Impedit Quo Minus Id Quod Maxime Placeat Facere Possimus</p>
-													</div>
-													<div class="review-lc text-right">
-														<a href="restaurant-detail.html#"><i class="ti-heart"></i>120</a>
-														<a href="restaurant-detail.html#"><i class="ti-comment"></i>36</a>
-													</div>
-												</div>
-												
-											</div>
-											
-											<!-- Single Review -->
-											<div class="review-box">
-												<div class="review-thumb">
-													<img src="assets/img/user-5.jpg" class="img-responsive img-circle" alt="" />
-												</div>
-												
-												<div class="review-box-content">
-													<div class="reviewer-rate">
-														<p><i class="fa fa-star cl-warning"></i>4.8/<span>5</span></p>
-													</div>
-													<div class="review-user-info">
-														<h4>Duke Divalkis</h4>
-														<p>Et Harum Quidem Rerum Facilis Est Et Expedita Distinctio. Nam Libero Tempore, Cum Soluta Nobis Est Eligendi Optio Cumque Nihil Impedit Quo Minus Id Quod Maxime Placeat Facere Possimus</p>
-													</div>
-													<div class="review-lc text-right">
-														<a href="restaurant-detail.html#"><i class="ti-heart"></i>80</a>
-														<a href="restaurant-detail.html#"><i class="ti-comment"></i>70</a>
-													</div>
-												</div>
-												
-											</div>
-											
-											<!-- Single Review -->
-											<div class="review-box">
-												<div class="review-thumb">
-													<img src="assets/img/user-6.jpg" class="img-responsive img-circle" alt="" />
-												</div>
-												
-												<div class="review-box-content">
-													<div class="reviewer-rate">
-														<p><i class="fa fa-star cl-warning"></i>4.7/<span>5</span></p>
-													</div>
-													<div class="review-user-info">
-														<h4>Shilka Rai</h4>
-														<p>Et Harum Quidem Rerum Facilis Est Et Expedita Distinctio. Nam Libero Tempore, Cum Soluta Nobis Est Eligendi Optio Cumque Nihil Impedit Quo Minus Id Quod Maxime Placeat Facere Possimus</p>
-													</div>
-													<div class="review-lc text-right">
-														<a href="restaurant-detail.html#"><i class="ti-heart"></i>120</a>
-														<a href="restaurant-detail.html#"><i class="ti-comment"></i>140</a>
-													</div>
-												</div>
-												
-											</div>
-											
-										</div>
-									</div>
-								
-								</div>
-								
-							</div>
+						
 							
 							
 						

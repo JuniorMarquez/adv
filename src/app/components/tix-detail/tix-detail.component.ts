@@ -13,15 +13,18 @@ import { ActivatedRoute, Params} from '@angular/router';
 export class TixDetailComponent implements OnInit {
 
   constructor(public scrollTopService:ScrollTopService, private dataApi: DataApiService,private route:ActivatedRoute) { }
-private tix:TixInterface= {
+public tix:TixInterface= {
 	titulo:'',
 	descripcion:'',
-	precio:''
+	precio:'',
+	productName:'',
+	notes:'',
+	images: ['', '']
 };
   ngOnInit() {
    this.scrollTopService.setScrollTop();
-  	const tix_id =this.route.snapshot.paramMap.get('id');
-  	this.getDetails(tix_id);
+//  	const tix_id: string=this.route.snapshot.paramMap.get('id');
+  	this.getDetails(this.route.snapshot.paramMap.get('id'));
 
   }
 getDetails(id: string){

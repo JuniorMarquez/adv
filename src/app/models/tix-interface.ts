@@ -3,4 +3,8 @@ export interface TixInterface{
 	titulo?:string;
 	descripcion?:string;
 	precio?:string;
+	productName?:string;
+	description?:string;
+	images?: Array<string>;
+	notes?:string;
 }
