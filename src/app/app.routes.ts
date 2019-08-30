@@ -7,7 +7,8 @@ import {
 	AffiliatesComponent,
 	PartnerDetailComponent,
 	AffiliateDetailComponent,
-	TixDetailComponent
+	TixDetailComponent,
+	SignupComponent
 
 	}from "./components/index.paginas";
 
@@ -20,6 +21,7 @@ const app_routes: Routes = [
 	{path:'partner-detail/:id',component:PartnerDetailComponent},
 	{path:'affiliate-detail/:id',component:AffiliateDetailComponent},
 	{path:'tix-detail/:id',component:TixDetailComponent},
+	{path:'signup',component:SignupComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);
