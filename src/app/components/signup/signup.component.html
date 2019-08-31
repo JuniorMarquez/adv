@@ -4,12 +4,12 @@
 			<div class="container">
 				<div class="col-md-6 col-md-push-6">
 					<h3 class="log-title">Corporate LogIn</h3>
-					<form class="form">
+					<form class="form" #formRegister="ngForm" (ngSubmit) ="onRegister()">
 						<div class="form-group">
 							<div class="row">
 								<div class="col-md-6 col-sm-6">
 									<label for="inputEmail">Full Name</label>
-									<input type="name" class="form-control" id="inputEmail" placeholder="Full Name" required>
+									<input type="name" class="form-control" id="name" name="name" placeholder="Full Name" [(ngModel)]="user.name" required>
 								</div>
 								
 								
@@ -18,11 +18,11 @@
 								
 								<div class="col-md-6 col-sm-6">
 									<label for="inputEmail">Email</label>
-									<input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+									<input type="email" class="form-control" id="email" placeholder="Email" name="email" [(ngModel)]="user.email" required>
 								</div>
 								<div class="col-md-6 col-sm-6">
 									<label for="inputEmail">Password</label>
-									<input type="password" class="form-control" id="inputEmail" placeholder="*******" required>
+									<input type="password" class="form-control" id="password" name="password" placeholder="*******" [(ngModel)]="user.password" required>
 								</div>
 							</div>
 						</div>
