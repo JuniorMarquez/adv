@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ScrollTopService }  from '../../services/scroll-top.service';
-import {DataApiService} from '../../services/data-api.service';
+import { DataApiService } from '../../services/data-api.service';
 import { TixInterface } from '../../models/tix-interface'; 
 import { ActivatedRoute, Params} from '@angular/router';
+//import $ from "jquery";
+//import $ from 'jquery';
+//import * as $ from 'jquery'; 
+import $ from "jquery";
+
+
 
 
 @Component({
@@ -21,7 +27,12 @@ public tix:TixInterface= {
 	notes:'',
 	images: ['', '']
 };
+
+
+
+
   ngOnInit() {
+
    this.scrollTopService.setScrollTop();
 //  	const tix_id: string=this.route.snapshot.paramMap.get('id');
   	this.getDetails(this.route.snapshot.paramMap.get('id'));

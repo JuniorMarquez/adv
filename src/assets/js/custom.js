@@ -135,17 +135,17 @@
 	});
 	
 	/*----- Fast Click Select ------*/
-	  $('select').niceSelect();  
+	  // $('select').niceSelect();  
 	  
 	 /*-------- Price Range Slider ------*/
-	var s3 = $("#price-range").freshslider({
-		range: true,
-		step:1,
-		value:[10, 500],
-		onchange:function(low, high){
-			console.log(low, high);
-		}
-	});
+	// var s3 = $("#price-range").freshslider({
+	// 	range: true,
+	// 	step:1,
+	// 	value:[10, 500],
+	// 	onchange:function(low, high){
+	// 		console.log(low, high);
+	// 	}
+	// });
 	
 	  /*----Slim Scroll message & notification----*/
 	  $('#main-menu').slimScroll({

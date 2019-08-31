@@ -5,7 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-
+//import $ from "jquery";
+//import * as $ from 'jquery'; 
+//import $ from "jquery";
 
 //RUTAS
 import { app_routing } from "./app.routes";       
