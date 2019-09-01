@@ -20,23 +20,28 @@
           <ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
           
             
-                <li><a routerLink="alltixs">All Tixs</a></li>
+                <li><a routerLink="alltixs" >All Tixs</a></li>
                 <li><a routerLink="partners" *ngIf="isLogged">Partners</a></li>
                 <li><a routerLink="affiliates" *ngIf="isLogged">Affiliates</a></li>
                 <li><a routerLink="booking" *ngIf="isLogged">Booking</a></li>
 
                 
           </ul>
+         <ul class="nav navbar-nav navbar-right" *ngIf="!isLogged">
+            <li class="br-right"><a routerLink="login"><i class="login-icon ti-user"></i>Login</a></li>
+            <li class="sign-up"><a class="btn-signup red-btn" routerLink="login"><span class="ti-briefcase"></span>Login</a></li> 
+          </ul>
           
           <ul class="nav navbar-nav navbar-right" *ngIf="isLogged">
             <li class="dropdown dash-link"><a  class="dropdown-toggle"><img src="assets/img/user-3.jpg" class="img-responsive avatar" alt="" />Hi,</a> 
               <ul class="dropdown-menu left-nav">
                 <li><a routerLink="mytixs">My Tixs</a></li>
-                <li><a href="profile.html">My Profile</a></li>
+                <li><a routerLink="Profile">My Profile</a></li>
                 <li><a href="#" (click)="onLogout()">Log Out</a></li>
               </ul>
             </li>
           </ul>
+
             
         </div>
         <!-- /.navbar-collapse -->

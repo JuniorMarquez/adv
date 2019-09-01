@@ -66,6 +66,7 @@ import { PartnerDetailComponent } from './components/partner-detail/partner-deta
 import { AffiliateDetailComponent } from './components/affiliate-detail/affiliate-detail.component';
 import { TixDetailComponent } from './components/tix-detail/tix-detail.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -88,7 +89,8 @@ import { SignupComponent } from './components/signup/signup.component';
     PartnerDetailComponent,
     AffiliateDetailComponent,
     TixDetailComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

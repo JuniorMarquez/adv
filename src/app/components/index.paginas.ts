@@ -7,3 +7,4 @@ export { AffiliateDetailComponent } from "./affiliate-detail/affiliate-detail.co
 export { PartnerDetailComponent } from "./partner-detail/partner-detail.component";
 export { TixDetailComponent } from "./tix-detail/tix-detail.component";
 export { SignupComponent } from "./signup/signup.component";
+export { ProfileComponent } from "./profile/profile.component";
