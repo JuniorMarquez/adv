@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
+//import { Router } from '@angular/router';
 import { UserInterface } from '../../models/user-interface'; 
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -11,22 +11,31 @@ import { UserInterface } from '../../models/user-interface';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,private location: Location) { }
 //user: UserInterface;
-public isLogged:boolean=false;
+public user : UserInterface ={
+    name:"",
+    email:"",
+    password:""
+  };
+  
+  public isLogged =false;
   ngOnInit() {
-  	this.onCheckUser();
-  }
+	     this.user = this.authService.getCurrentUser();
+       this.onCheckUser();
 
+        
+  }
   onLogout():void{
   	this.authService.logoutUser();
+    location.reload();
   }
-onCheckUser():void{
-	if(this.authService.getCurrentUser()==null){
-		this.isLogged=false;
+    onCheckUser(): void {
+    if (this.authService.getCurrentUser() === null) {
+      this.isLogged = false;
+    } else {
+      this.isLogged = true;
+    }
+  }
 
-	}else{
-		this.isLogged=true;
-		}
-	}
 }

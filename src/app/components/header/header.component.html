@@ -28,15 +28,14 @@
                 
           </ul>
          <ul class="nav navbar-nav navbar-right" *ngIf="!isLogged">
-            <li class="br-right"><a routerLink="login"><i class="login-icon ti-user"></i>Login</a></li>
-            <li class="sign-up"><a class="btn-signup red-btn" routerLink="login"><span class="ti-briefcase"></span>Login</a></li> 
+            <li class="sign-up"><a class="btn-signup red-btn" routerLink="login" style="font-family: moderna;"><i class="login-icon ti-user"></i>Login</a></li> 
           </ul>
           
           <ul class="nav navbar-nav navbar-right" *ngIf="isLogged">
-            <li class="dropdown dash-link"><a  class="dropdown-toggle"><img src="assets/img/user-3.jpg" class="img-responsive avatar" alt="" />Hi,</a> 
+            <li class="dropdown dash-link"><a  class="dropdown-toggle"><img src="assets/img/user-3.jpg" class="img-responsive avatar" alt="" />Hi,{{user.name}}</a> 
               <ul class="dropdown-menu left-nav">
                 <li><a routerLink="mytixs">My Tixs</a></li>
-                <li><a routerLink="Profile">My Profile</a></li>
+                <li><a routerLink="profile">My Profile</a></li>
                 <li><a href="#" (click)="onLogout()">Log Out</a></li>
               </ul>
             </li>

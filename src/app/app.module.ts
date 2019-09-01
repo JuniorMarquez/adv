@@ -8,6 +8,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 //import $ from "jquery";
 //import * as $ from 'jquery'; 
 //import $ from "jquery";
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 //RUTAS
 import { app_routing } from "./app.routes";       
@@ -16,6 +18,8 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+//DIRECTIVAS
+import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
 
 //COMPONENTS
 
@@ -90,7 +94,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     AffiliateDetailComponent,
     TixDetailComponent,
     SignupComponent,
-    ProfileComponent
+    ProfileComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -106,7 +111,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     ReactiveFormsModule,
     MatBadgeModule,
     MatTableModule,
-CarouselModule
+CarouselModule,
+NgxSpinnerModule
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,

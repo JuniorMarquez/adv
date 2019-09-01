@@ -11,9 +11,20 @@ export class MyTixsComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 user: UserInterface;
-  ngOnInit() {
-  this.user = this.authService.getCurrentUser();
-  console.log(this.user);
-  }
 
+
+
+ public isLogged =false;
+  ngOnInit() {
+	  	this.user = this.authService.getCurrentUser();
+ 	 	console.log(this.user);
+ 	 	this.onCheckUser();
+  }
+    onCheckUser(): void {
+    if (this.authService.getCurrentUser() === null) {
+      this.isLogged = false;
+    } else {
+      this.isLogged = true;
+    }
+  }
 }
