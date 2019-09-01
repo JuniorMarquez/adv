@@ -3,15 +3,15 @@
 		<section class="log-wrapper">
 			<div class="container">
 				<div class="col-md-6 col-md-push-6">
-					<h3 class="log-title">Corporate LogIn</h3>
-					<form class="form">
+					<h3 class="log-title">Thetixs LogIn</h3>
+					<form class="form" #formLogin="ngForm" (ngSubmit) ="onLogin()">
 						<div class="form-group">
-							<label for="inputEmail">User Name</label>
-							<input type="email" class="form-control" id="inputEmail" placeholder="User Name" required>
+							<label for="inputEmail">Email</label>
+							<input type="email" class="form-control" id="email" placeholder="User Name" name="email" [(ngModel)]="user.email"required>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail">Password</label>
-							<input type="password" class="form-control" id="inputEmail" placeholder="*******" required>
+							<input type="password" class="form-control" id="password" placeholder="*******" name="password" [(ngModel)]="user.password" required>
 						</div>
 						<div class="form-group">
 							<div class="row">
@@ -19,7 +19,7 @@
 									<button type="submit" class="btn btn-dark">Login</button>
 								</div>
 								<div class="col-md-6 col-sm-6">
-									<p>Foreget Password? <a href="login.html#">Click Here</a></p>
+									<p>Are you new? <a routerLink="signup">Click Here</a></p>
 								</div>
 							</div>
 						</div>

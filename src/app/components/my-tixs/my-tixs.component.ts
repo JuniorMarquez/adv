@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { UserInterface } from '../../models/user-interface';  
 
 @Component({
   selector: 'app-my-tixs',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyTixsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private authService: AuthService) { }
+user: UserInterface;
   ngOnInit() {
+  this.user = this.authService.getCurrentUser();
+  console.log(this.user);
   }
 
 }
