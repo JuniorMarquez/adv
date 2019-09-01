@@ -22,7 +22,7 @@ export class DataApiService {
   		});
 
 	getAllTixs(){
-		const url_api = 'https://www.thetixsapp.com:3000/api/product'
+		const url_api = 'https://www.thetixsapp.com:3000/api/product?filter[where][status]=activated';
 		return this.http.get(url_api);
 
 	}
@@ -34,8 +34,8 @@ export class DataApiService {
 //		this.tix.front = this.tix.images[0];
 		return (this.tix);
 	}
-	getOffers(){
-		const url_api='https://www.thetixsapp.com:3000/api/product?filter[where][Offers]=1';
+	getPending(){
+		const url_api='https://www.thetixsapp.com:3000/api/product?filter[where][status]=pending';
 		return (this.tixs = this.http.get(url_api));
 	}
 	saveTix(tix :TixInterface){

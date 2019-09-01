@@ -12,12 +12,21 @@ import { UserInterface } from '../../models/user-interface';
 export class HeaderComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
-user: UserInterface;
+//user: UserInterface;
+public isLogged:boolean=false;
   ngOnInit() {
+  	this.onCheckUser();
   }
 
   onLogout():void{
   	this.authService.logoutUser();
   }
+onCheckUser():void{
+	if(this.authService.getCurrentUser()==null){
+		this.isLogged=false;
 
+	}else{
+		this.isLogged=true;
+		}
+	}
 }

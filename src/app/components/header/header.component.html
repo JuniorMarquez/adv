@@ -21,14 +21,14 @@
           
             
                 <li><a routerLink="alltixs">All Tixs</a></li>
-                <li><a routerLink="partners">Partners</a></li>
-                <li><a routerLink="affiliates">Affiliates</a></li>
-                <li><a routerLink="booking">Booking</a></li>
+                <li><a routerLink="partners" *ngIf="isLogged">Partners</a></li>
+                <li><a routerLink="affiliates" *ngIf="isLogged">Affiliates</a></li>
+                <li><a routerLink="booking" *ngIf="isLogged">Booking</a></li>
 
                 
           </ul>
           
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" *ngIf="isLogged">
             <li class="dropdown dash-link"><a  class="dropdown-toggle"><img src="assets/img/user-3.jpg" class="img-responsive avatar" alt="" />Hi,</a> 
               <ul class="dropdown-menu left-nav">
                 <li><a routerLink="mytixs">My Tixs</a></li>
