@@ -1,13 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-//import { NgModule } from '@angular/core';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-//import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-//import $ from "jquery";
-//import * as $ from 'jquery'; 
-//import $ from "jquery";
 import { NgxSpinnerModule } from "ngx-spinner";
 
 
@@ -22,7 +17,6 @@ import { environment } from '../environments/environment';
 import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
 
 //COMPONENTS
-
 import { CatalogComponent,DialogOverviewExampleDialog } from './components/catalog/catalog.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -35,6 +29,7 @@ import {ProductInfoService} from './services/product-info.service';
 import {CarService} from './services/car.service';
 import {DataApiService} from './services/data-api.service';
 import {ScrollTopService} from './services/scroll-top.service';
+import {UserWService} from './services/user-w.service';
 
 
 
@@ -56,7 +51,6 @@ import {MatTableModule} from '@angular/material/table';
 
 
 import { HttpClientModule } from '@angular/common/http';
-//import { LightboxModule } from 'ngx-lightbox';
 import { Component, Inject} from '@angular/core';
 import { TopTixsComponent } from './components/top-tixs/top-tixs.component';
 import { SliderHomeComponent } from './components/slider-home/slider-home.component';
@@ -127,7 +121,8 @@ NgxSpinnerModule
   providers: [
     TixsService,
     DataApiService,
-    ScrollTopService
+    ScrollTopService,
+    UserWService
       ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

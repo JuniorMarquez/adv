@@ -21,22 +21,27 @@
           
             
                 <li><a routerLink="alltixs" >All Tixs</a></li>
-                <li><a routerLink="partners" *ngIf="isLogged">Partners</a></li>
-                <li><a routerLink="affiliates" *ngIf="isLogged">Affiliates</a></li>
-                <li><a routerLink="booking" *ngIf="isLogged">Booking</a></li>
+                <li><a routerLink="partners" *ngIf="this._uw.isLogged">Partners</a></li>
+                <li><a routerLink="affiliates" *ngIf="this._uw.isLogged">Affiliates</a></li>
+                <li><a routerLink="booking" *ngIf="this._uw.isLogged">Booking</a></li>
 
                 
           </ul>
-         <ul class="nav navbar-nav navbar-right" *ngIf="!isLogged">
-            <li class="sign-up"><a class="btn-signup red-btn" routerLink="login" style="font-family: moderna;"><i class="login-icon ti-user"></i>Login</a></li> 
+         
+            <ul class="nav navbar-nav navbar-right"  *ngIf="!this._uw.isLogged" [hidden]="this._uw.isLogged">
+<!--             <li class="sign-up"><a class="btn-signup red-btn" routerLink="login" style="font-family: moderna;"><i class="login-icon ti-user"></i>Login</a></li>  -->
+
+            <li class="br-right"><a  routerLink="signup"  style="font-family: moderna;"><i class="login-icon ti-user"></i>SignUp</a></li>
+            <li class="sign-up"><a class="btn-signup red-btn" routerLink="login"  style="font-family: moderna;"><span class="ti-briefcase"></span>Login</a></li> 
+
           </ul>
           
-          <ul class="nav navbar-nav navbar-right" *ngIf="isLogged">
-            <li class="dropdown dash-link"><a  class="dropdown-toggle"><img src="assets/img/user-3.jpg" class="img-responsive avatar" alt="" />Hi,{{user.name}}</a> 
+          <ul class="nav navbar-nav navbar-right" [hidden]="!this._uw.isLogged">
+            <li class="dropdown dash-link"><a  class="dropdown-toggle"><img src="assets/img/user-3.jpg" class="img-responsive avatar" alt="" />Hi,{{this._uw.name}}</a> 
               <ul class="dropdown-menu left-nav">
                 <li><a routerLink="mytixs">My Tixs</a></li>
                 <li><a routerLink="profile">My Profile</a></li>
-                <li><a href="#" (click)="onLogout()">Log Out</a></li>
+                <li><a (click)="onLogout()">Log Out</a></li>
               </ul>
             </li>
           </ul>

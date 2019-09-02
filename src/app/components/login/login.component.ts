@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { isError } from 'util';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
+import { UserWService } from "../../services/user-w.service";
 
 declare var NgForm:any;
 
@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
   ngFormLogin: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private location: Location) { }
-  private user : UserInterface ={
+  constructor(public _uw:UserWService,private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private location: Location) { }
+  public user : UserInterface ={
     name:"",
   	email:"",
   	password:""
@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
   public isError = false;
   public isLogged =false;
   
-
   ngOnInit() {
     this.onCheckUser(); 
     this.ngFormLogin = this.formBuilder.group({
@@ -57,8 +56,8 @@ export class LoginComponent implements OnInit {
             	this.authService.setUser(data.user);
             	const token = data.id;
               this.authService.setToken(token);
+               this._uw.name=data.name;
               this.router.navigate(['/mytixs']);
-            	location.reload();
               this.isError = false;
         },
          error => this.onIsError()
@@ -75,9 +74,11 @@ export class LoginComponent implements OnInit {
 
    onCheckUser(): void {
     if (this.authService.getCurrentUser() === null) {
-      this.isLogged = false;
+         this.isLogged = false;
+      this._uw.isLogged=false;
     } else {
       this.isLogged = true;
+      this._uw.isLogged = true;
       this.router.navigate(['/mytixs']);
     }
   }

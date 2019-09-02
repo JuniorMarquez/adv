@@ -2,7 +2,7 @@ import { Component, OnInit,Inject } from '@angular/core';
 import {DataApiService} from '../../services/data-api.service';
 import { TixInterface } from '../../models/tix-interface'; 
 
-declare var $: any;
+//declare var $: any;
 
 @Component({
   selector: 'app-slider-home',

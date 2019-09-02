@@ -6,9 +6,9 @@ import { Location } from '@angular/common';
 import { isError } from 'util';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
+import { UserWService } from "../../services/user-w.service";
 
-
-declare var NgForm:any;
+//declare var NgForm:any;
 
 @Component({
   selector: 'app-signup',
@@ -20,8 +20,8 @@ export class SignupComponent implements OnInit {
 ngFormSignup: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder,private authService: AuthService, private router: Router,private location:Location) { }
-  private user : UserInterface ={
+  constructor(public _uw:UserWService,private formBuilder: FormBuilder,private authService: AuthService, private router: Router,private location:Location) { }
+  public user : UserInterface ={
   	name:"",
   	email:"",
   	password:""
@@ -53,8 +53,8 @@ ngFormSignup: FormGroup;
         this.authService.setUser(user);
         const token  = user.id;
         this.authService.setToken(token);
-        this.router.navigate(['/affiliates']);
-        location.reload();
+      this.router.navigate(['/mytixs']);
+        this._uw.name= user.name;
       });
   }   get fval() {
   return this.ngFormSignup.controls;
@@ -62,8 +62,10 @@ ngFormSignup: FormGroup;
      onCheckUser(): void {
     if (this.authService.getCurrentUser() === null) {
       this.isLogged = false;
+      this._uw.isLogged=false;
     } else {
       this.isLogged = true;
+            this._uw.isLogged=true;
       this.router.navigate(['/mytixs']);
     }
   }

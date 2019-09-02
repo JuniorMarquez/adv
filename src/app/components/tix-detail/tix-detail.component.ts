@@ -3,10 +3,12 @@ import { ScrollTopService }  from '../../services/scroll-top.service';
 import { DataApiService } from '../../services/data-api.service';
 import { TixInterface } from '../../models/tix-interface'; 
 import { ActivatedRoute, Params} from '@angular/router';
+import { UserWService } from "../../services/user-w.service";
+
 //import $ from "jquery";
 //import $ from 'jquery';
 //import * as $ from 'jquery'; 
-import $ from "jquery";
+//import $ from "jquery";
 
 
 
@@ -18,7 +20,7 @@ import $ from "jquery";
 })
 export class TixDetailComponent implements OnInit {
 
-  constructor(public scrollTopService:ScrollTopService, private dataApi: DataApiService,private route:ActivatedRoute) { }
+  constructor(public _uw:UserWService,public scrollTopService:ScrollTopService, private dataApi: DataApiService,private route:ActivatedRoute) { }
 public tix:TixInterface= {
 	titulo:'',
 	descripcion:'',
