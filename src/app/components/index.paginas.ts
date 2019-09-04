@@ -8,3 +8,6 @@ export { PartnerDetailComponent } from "./partner-detail/partner-detail.componen
 export { TixDetailComponent } from "./tix-detail/tix-detail.component";
 export { SignupComponent } from "./signup/signup.component";
 export { ProfileComponent } from "./profile/profile.component";
+export { AddTixComponent } from "./tixs/add-tix/add-tix.component";
+export { ComingComponent } from "./coming/coming.component";
+export { AlltixsComponent } from "./alltixs/alltixs.component";

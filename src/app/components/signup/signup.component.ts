@@ -7,17 +7,16 @@ import { isError } from 'util';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfirmEqualValidatorDirective } from '../../confirm-equal-validator.directive';
 import { UserWService } from "../../services/user-w.service";
-
-//declare var NgForm:any;
+import { DataApiService } from '../../services/data-api.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+  export class SignupComponent implements OnInit {
 
-ngFormSignup: FormGroup;
+  ngFormSignup: FormGroup;
   submitted = false;
 
   constructor(public _uw:UserWService,private formBuilder: FormBuilder,private authService: AuthService, private router: Router,private location:Location) { }
@@ -38,12 +37,13 @@ ngFormSignup: FormGroup;
     });
     this.onCheckUser()
   }
-
+  
   onRegister(): void{
      this.submitted = true;
      if (this.ngFormSignup.invalid) {
           return;
-            }    	this.authService.registerUser(
+            }    	
+        this.authService.registerUser(
     		this.user.name, 
     		this.user.email, 
     		this.user.password
@@ -53,13 +53,16 @@ ngFormSignup: FormGroup;
         this.authService.setUser(user);
         const token  = user.id;
         this.authService.setToken(token);
-      this.router.navigate(['/mytixs']);
+        this.router.navigate(['/mytixs']);
         this._uw.name= user.name;
       });
-  }   get fval() {
+  }
+
+  get fval() {
   return this.ngFormSignup.controls;
   }
-     onCheckUser(): void {
+     
+  onCheckUser(): void {
     if (this.authService.getCurrentUser() === null) {
       this.isLogged = false;
       this._uw.isLogged=false;
@@ -69,7 +72,4 @@ ngFormSignup: FormGroup;
       this.router.navigate(['/mytixs']);
     }
   }
-
-
-
 }

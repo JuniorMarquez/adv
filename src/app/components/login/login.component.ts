@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
             	this.authService.setUser(data.user);
             	const token = data.id;
               this.authService.setToken(token);
-               this._uw.name=data.name;
+              this._uw.name=data.name;
               this.router.navigate(['/mytixs']);
               this.isError = false;
         },
@@ -64,7 +64,6 @@ export class LoginComponent implements OnInit {
         ); 
   }    
     
-
   onIsError(): void {
     this.isError = true;
     setTimeout(() => {
@@ -82,6 +81,4 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/mytixs']);
     }
   }
-
-
 }

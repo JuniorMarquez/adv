@@ -40,7 +40,7 @@ public tix:TixInterface= {
   	this.getDetails(this.route.snapshot.paramMap.get('id'));
 
   }
-getDetails(id: string){
-	this.dataApi.getTixById(id).subscribe(tix => (this.tix = tix));
-}
+  getDetails(id: string){
+  	this.dataApi.getTixById(id).subscribe(tix => (this.tix = tix));
+  }
 }

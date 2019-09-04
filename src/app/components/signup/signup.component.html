@@ -2,8 +2,8 @@
 	
 		<section class="log-wrapper">
 			<div class="container">
-				<div class="col-md-3 col-md-push-8">
-					<h3 class="log-title">SignUp</h3>
+				<div class="col-md-4 col-md-push-8">
+					<h3 class="log-title">Sign  Up</h3>
 					<form class="form"[formGroup]="ngFormSignup" (ngSubmit) ="onRegister()">
 						<div class="form-group">
 							<div class="row">
@@ -13,19 +13,18 @@
 									[ngClass]="{ 'is-invalid': submitted && fval.name.errors }"
 									 required>
 									 <div *ngIf="submitted && fval.name.errors" class="invalid-feedback">
-<div *ngIf="fval.name.errors.required">
-Full Name is required and must be a valid name
-</div>
- 
-</div>
+										<div *ngIf="fval.name.errors.required">
+										Full Name is required and must be a valid name
+										</div>
+  									 </div>
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Email</label>
 									<input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" [(ngModel)]="user.email" required [ngClass]="{ 'is-invalid': submitted && fval.email.errors }">
 									<div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
-<div *ngIf="fval.email.errors.required">Email is required</div>
-<div *ngIf="fval.email.errors.email">Enter a valid email address</div>
-</div>
+										<div *ngIf="fval.email.errors.required">Email is required</div>
+										<div *ngIf="fval.email.errors.email">Enter a valid email address</div>
+									</div>
 								</div>
 								<div class="form-group">
 									<label for="inputEmail">Password</label>
@@ -39,18 +38,28 @@ Full Name is required and must be a valid name
 								<div *ngIf="fval.password.errors.minlength">Password must be at least 6 characters</div>
 								</div>
 								</div>
-
-								
+								<div class="form-group">
+									<ul class="nav nav-tabs nav-advance theme-bg" style="border: 0px;" role="tablist">
+						              <li class="nav-item active">
+						                <a class="nav-link" data-toggle="tab"  role="tab" >
+						                <i class="ti-user"></i> Partner</a>
+						              </li>
+						              <li class="nav-item">
+						                <a class="nav-link" data-toggle="tab"  role="tab">
+						                <i class="ti-user"></i> Affiliate</a>
+						              </li>
+						            </ul>
+								</div>
 							</div>
 							
 						</div>
 						<div class="form-group">
 							<div class="row">
 								<div class="col-md-6 col-sm-6">
-									<button type="submit" class="btn btn-dark">SignUp</button>
+									<button type="submit" class="btn btn-dark">Sign Up</button>
 								</div>
 								<div class="col-md-6 col-sm-6">
-									<p>Already Have Account? <a routerLink="/login">LogIn Here</a></p>
+									<p>Already Have Account? <a routerLink="/login">Sign In Here</a></p>
 								</div>
 							</div>
 						</div>

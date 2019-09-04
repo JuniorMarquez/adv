@@ -65,6 +65,10 @@ import { AffiliateDetailComponent } from './components/affiliate-detail/affiliat
 import { TixDetailComponent } from './components/tix-detail/tix-detail.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AddTixComponent } from './components/tixs/add-tix/add-tix.component';
+import { ComingComponent } from './components/coming/coming.component';
+import { AlltixsComponent } from './components/alltixs/alltixs.component';
+
 
 
 
@@ -89,7 +93,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     TixDetailComponent,
     SignupComponent,
     ProfileComponent,
-    ConfirmEqualValidatorDirective
+    ConfirmEqualValidatorDirective,
+    AddTixComponent,
+    ComingComponent,
+    AlltixsComponent
   ],
   imports: [
     BrowserModule,
