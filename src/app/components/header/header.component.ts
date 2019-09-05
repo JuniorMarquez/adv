@@ -43,7 +43,6 @@ submitted = false;
     });
       this.user = this.authService.getCurrentUser();
       this.onCheckUser();
-      this._uw.name=''; 
       //this.router.navigate(['/coming']);
   }
 
@@ -52,7 +51,6 @@ submitted = false;
      if (this.ngFormSignup.invalid) {
           return;
             }    
-
         this.authService.registerUser(
         this.user.name, 
         this.user.email, 
@@ -84,6 +82,7 @@ submitted = false;
       this._uw.isLogged=false;
     } else {
       this._uw.name=this.user.name;
+    //this._uw.email=this.user.email;
       this.isLogged = true;
       this._uw.isLogged=true;
     }

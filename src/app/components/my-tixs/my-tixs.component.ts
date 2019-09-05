@@ -17,17 +17,19 @@ import { Location } from '@angular/common';
 export class MyTixsComponent implements OnInit {
 
   constructor(private router: Router, private location: Location, public dataApi: DataApiService, public _uw:UserWService,private authService: AuthService) { }
+  
   public user : UserInterface ={
     name:"",
     email:"",
     password:""
   };
-
-
-private cards:CardInterface;
- public cardsResult:any[]=[];
-
+  private cards:CardInterface;
+  public cardsResult:any[]=[];
   public isLogged =false;
+
+  cardArray: any[]=[];
+//  productsFil:any[]=[];
+  
 
   ngOnInit() {
 	  	this.user = this.authService.getCurrentUser();
@@ -37,30 +39,22 @@ private cards:CardInterface;
     let val=(this.user.id).toString();
        this.dataApi.getCards(val).subscribe((res:any) => {
       if (res[0] === undefined){
-        console.log("no")
+        console.log("no");
+//        this.dataApi.saveCard();
+this.router.navigate(['/new-member']);
         }else{
-          console.log("si")
+          console.log("si"); 
+          this._uw.bandera=(res[0].bander);
+        //  console.log("bandera dentro", this._uw.bandera);
+              
         }
-      //console.log(res);
-      //this._uw.cardsResult=res[0];
       });
-     // console.log(this._uw.cardsResult);
+    //console.log("bandera fuera: ", this._uw.bandera);
   }
 
 
   getCards(card_id: string){
-    // this.dataApi.getCards(card_id)
-    //.subscribe((cards: CardsInterface) => (this.card=cards));
-    //this.card=this.dataApi.getCards(card_id);
-    //console.log(this.card);
-    //this.dataApi.getCards(card_id)
-    //.subscribe(cards => {
-    //this.cards = cards;         
-    //});
-    //console.log(this.cards);
-    this.dataApi.getCards(card_id).subscribe((res:any) => {
-      console.log(res);
-      });
+    this.dataApi.getCards(card_id);
     }
 
   onCheckUser(): void {

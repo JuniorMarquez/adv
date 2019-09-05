@@ -11,3 +11,5 @@ export { ProfileComponent } from "./profile/profile.component";
 export { AddTixComponent } from "./tixs/add-tix/add-tix.component";
 export { ComingComponent } from "./coming/coming.component";
 export { AlltixsComponent } from "./alltixs/alltixs.component";
+
+export { NewMemberComponent } from "./new-member/new-member.component";

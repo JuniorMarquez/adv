@@ -68,6 +68,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AddTixComponent } from './components/tixs/add-tix/add-tix.component';
 import { ComingComponent } from './components/coming/coming.component';
 import { AlltixsComponent } from './components/alltixs/alltixs.component';
+import { NewMemberComponent } from './components/new-member/new-member.component';
 
 
 
@@ -96,7 +97,8 @@ import { AlltixsComponent } from './components/alltixs/alltixs.component';
     ConfirmEqualValidatorDirective,
     AddTixComponent,
     ComingComponent,
-    AlltixsComponent
+    AlltixsComponent,
+    NewMemberComponent
   ],
   imports: [
     BrowserModule,

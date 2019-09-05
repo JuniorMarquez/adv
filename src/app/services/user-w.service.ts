@@ -10,6 +10,7 @@ isLogged:boolean=false;
 	name:string;
 	idCard:string;
 	type:string;
+	bandera:string;
 	cardsResult:any[]=[];
   constructor() { }
 }

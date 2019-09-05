@@ -42,7 +42,6 @@ export class DataApiService {
 		let indice = id;
 		const url_api=`http://192.168.0.107:3000/api/product/${indice}`;
 		this.tix = this.http.get(url_api);
-//		this.tix.front = this.tix.images[0];
 		return (this.tix);
 	}
 	getPending(){
@@ -70,25 +69,18 @@ export class DataApiService {
 		.delete<TixInterface>(url_api, {headers: this.headers})
 		.pipe(map(data => data));
 	}
-
-
-
-	//getCardById(id:string){
-		// console.log(id);
-		//let indice = id;
-		//const url_api=`http://192.168.0.107:3000/api/card/${indice}`;
-		//this.card = this.http.get(url_api);
-		//return (this.card);
-	//}
-
-
-	 getCards(id:string){
+	getCards(id:string){
 		let indice = id;
-		//	console.log("indice de usuario a buscar en cards: ", indice);
-		//this.info=[];
 		const url_api = "http://192.168.0.107:3000/api/card?filter[where][userd]=a"+indice;
-		//this._uw.cards=this.http.get(url_api)
-		//return 
 		return this.http.get(url_api);
 	}
+	saveCard(card :CardInterface){
+		let token = this.authService.getToken();
+		const url_api='http://192.168.0.107:3000/api/card?access_token${token}';
+		return this.http
+		.post<CardInterface>(url_api, card,{headers: this.headers})
+		.pipe(map(data => data));
+	}
+
+
 }

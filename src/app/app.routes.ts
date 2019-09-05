@@ -12,7 +12,8 @@ import {
 	ProfileComponent,
 	AddTixComponent,
 	ComingComponent,
-	AlltixsComponent
+	AlltixsComponent,
+	NewMemberComponent
 
 	}from "./components/index.paginas";
 	import { AuthGuard } from './guards/auth.guard';
@@ -31,6 +32,7 @@ const app_routes: Routes = [
 	{path:'tixs/add-tix',component:AddTixComponent, canActivate:[AuthGuard]},
 	{path:'signup',component:SignupComponent},
 	{path:'coming',component:ComingComponent},
+	{path:'new-member',component:NewMemberComponent},	
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);
