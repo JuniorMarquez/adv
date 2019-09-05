@@ -1,25 +1,14 @@
-<section class="dashboard gray-bg padd-0 mrg-top-50 " style=" min-height: 600px;">
+<section class="dashboard gray-bg padd-0 mrg-top-50 " style="display: flex; min-height: 600px;">
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-9">
 						<div class="row mrg-0 mrg-top-20">
 							<div class="tr-single-box">
-							
-
-								<div class="tr-single-header" >
-									<h3 class="dashboard-title"><span style="font-weight: 100;">
-										Account Type
-									</span> </h3>
-									<ul class="nav nav-tabs nav-advance theme-bg" role="tablist">
-					              <li class="nav-item active">
-					                <a class="nav-link" data-toggle="tab" (click)="setPartner()" role="tab">
-					                <i class="ti-briefcase"></i> Partner</a>
-					              </li>
-					              <li class="nav-item">
-					                <a class="nav-link" data-toggle="tab"  (click)="setAffiliate()" role="tab">
-					                <i class="ti-user"></i> Affiliate</a>
-					              </li>
-					            </ul>
+								<div class="tr-single-header">
+									
+									<h3 class="dashboard-title"><span><a (click)="reset()" [hidden]="selectorType">
+										 <i class=" ti-angle-left"></i></a></span> 
+										Partner account </h3>
 								</div>
 								
 
@@ -34,6 +23,7 @@
 
 
 								
+
 
 								 
 
@@ -83,7 +73,7 @@
 
 									
 										
-										<fieldset > 
+										<fieldset [hidden]="selectorType"> 
 											<div class="row">
 												<div class="col-md-12 text-center">
 													<i class="ti-thumb-up cl-success font-50"></i>

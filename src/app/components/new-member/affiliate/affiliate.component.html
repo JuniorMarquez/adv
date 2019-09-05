@@ -4,22 +4,17 @@
 					<div class="col-lg-12 col-md-12 col-sm-9">
 						<div class="row mrg-0 mrg-top-20">
 							<div class="tr-single-box">
-							
-
-								<div class="tr-single-header" >
-									<h3 class="dashboard-title"><span style="font-weight: 100;">
-										Account Type
-									</span> </h3>
-									<ul class="nav nav-tabs nav-advance theme-bg" role="tablist">
-					              <li class="nav-item active">
-					                <a class="nav-link" data-toggle="tab" (click)="setPartner()" role="tab">
-					                <i class="ti-briefcase"></i> Partner</a>
-					              </li>
-					              <li class="nav-item">
-					                <a class="nav-link" data-toggle="tab"  (click)="setAffiliate()" role="tab">
-					                <i class="ti-user"></i> Affiliate</a>
-					              </li>
-					            </ul>
+								<div class="tr-single-header">
+									
+									<h3 class="dashboard-title">
+										<span>
+											<a (click)="reset()" >
+										 		<i class=" ti-angle-left"></i>
+										 	</a>
+										 </span> 
+										Affiliate account
+										
+									</h3>
 								</div>
 								
 
@@ -39,42 +34,44 @@
 
 								<div class="tr-single-body"  >
 									
-									<form id="msform">
-									
+									<form id="msform" >
+										
 										<ul id="progressbar" >
-											<li class="active">Company</li>
-											<li>Rep</li>
-											<li>ucces</li>
+											<li class="active">Person</li>
+											<li>Company</li>
+											<li>Succes</li>
 										</ul>
 
 
 										<fieldset>							
-											<div class="row" >
+									
+
+											<div class="row" > 
 												<div class="col-md-4 col-xs-12">
-													<label>Company Name</label>
-													<input type="text" class="form-control" placeholder="Company Name" />
-												</div> 
-												<div class="col-xs-12">
-													<label>Address</label>
-													<textarea class="form-control height-80" placeholder="Address"></textarea>
+													<label>Your Phone</label>
+													<input type="text" class="form-control" placeholder="960 234 34 56" />
 												</div>
-												<div class="col-md-12 col-xs-12">
-													<label>URL</label>
-													<input type="text" class="form-control" placeholder="http://www.website.com" />
-												</div> 
-											</div>	
-							
+											</div>								
 												<input type="button" name="next" class="next action-button" value="Next" />
 										</fieldset>
 
 										
 										<fieldset  >
-											<div class="row" >
-												<div class="col-md-4 col-xs-12">
-													<label>Your. Phone</label>
-													<input type="text" class="form-control" placeholder="960 234 34 56" />
+											<div class="row" > 
+												<div class="col-xs-12">
+													<label>Company address</label>
+													<textarea class="form-control height-80" placeholder="Company address"></textarea>
 												</div>
-											</div>
+												<div class="col-md-12 col-xs-12">
+													<label>Country</label>
+													<input type="text" class="form-control" placeholder="Country" />
+												</div>
+												<div class="col-xs-12">
+													<label>City</label>
+													<textarea class="form-control height-80" placeholder="Company city"></textarea>
+												</div> 
+											</div>	
+
 
 
 											<input type="button" name="previous" class="previous action-button" value="Previous" />

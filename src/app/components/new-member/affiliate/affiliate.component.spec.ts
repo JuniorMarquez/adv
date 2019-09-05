@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddTixComponent } from './add-tix.component';
+import { AffiliateComponent } from './affiliate.component';
 
-describe('AddTixComponent', () => {
-  let component: AddTixComponent;
-  let fixture: ComponentFixture<AddTixComponent>;
+describe('AffiliateComponent', () => {
+  let component: AffiliateComponent;
+  let fixture: ComponentFixture<AffiliateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddTixComponent ]
+      declarations: [ AffiliateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddTixComponent);
+    fixture = TestBed.createComponent(AffiliateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

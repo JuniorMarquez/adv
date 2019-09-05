@@ -69,6 +69,8 @@ import { AddTixComponent } from './components/tixs/add-tix/add-tix.component';
 import { ComingComponent } from './components/coming/coming.component';
 import { AlltixsComponent } from './components/alltixs/alltixs.component';
 import { NewMemberComponent } from './components/new-member/new-member.component';
+import { PartnerComponent } from './components/new-member/partner/partner.component';
+import { AffiliateComponent } from './components/new-member/affiliate/affiliate.component';
 
 
 
@@ -98,7 +100,9 @@ import { NewMemberComponent } from './components/new-member/new-member.component
     AddTixComponent,
     ComingComponent,
     AlltixsComponent,
-    NewMemberComponent
+    NewMemberComponent,
+    PartnerComponent,
+    AffiliateComponent
   ],
   imports: [
     BrowserModule,

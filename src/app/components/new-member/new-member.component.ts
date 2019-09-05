@@ -9,20 +9,34 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-
 @Component({
   selector: 'app-new-member',
   templateUrl: './new-member.component.html',
   styleUrls: ['./new-member.component.css']
 })
 export class NewMemberComponent implements OnInit {
-
-  constructor(public _uw:UserWService) { }
-
-
-  
-
+partner:boolean=false;
+affiliate:boolean=false;
+selectorType:boolean=true;  
+  constructor(public _uw:UserWService, private location: Location, private router: Router) { }
+      
   ngOnInit() {
+    if (this._uw.selectorA===true){
+        location.reload();
+      }
+  }
+
+
+ setPartner():void{
+    this.partner=true;
+     this.router.navigate(['/new-member/partner']);
+  }
+  reset():void{
+      
+  }
+  setAffiliate():void{
+    this.affiliate=true;
+    this.router.navigate(['/new-member/affiliate']);
   }
 
 }

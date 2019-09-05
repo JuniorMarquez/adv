@@ -11,6 +11,8 @@ isLogged:boolean=false;
 	idCard:string;
 	type:string;
 	bandera:string;
+	selectorB:boolean;
+	selectorA:boolean;
 	cardsResult:any[]=[];
   constructor() { }
 }
