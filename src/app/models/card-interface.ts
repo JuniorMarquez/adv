@@ -1,5 +1,4 @@
 export interface CardInterface{
-	email?:string;
-	id?:string;
-	
+	type?:string;
+	userd?:string;
 }

@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
 import { TixInterface } from '../models/tix-interface';
 import { CardInterface } from '../models/card-interface';
+import { UserWService } from "./user-w.service";
 
 
 
@@ -14,10 +15,18 @@ import { CardInterface } from '../models/card-interface';
 export class DataApiService {
 	tixs: Observable<any>;
 	tix: Observable<any>;
-	card: Observable<any>;
+	cards: Observable<any>;
 
-  constructor(private http: HttpClient, private authService:AuthService) {}
 
+	// cards:any={};
+ //info:any={};
+
+
+  constructor(public _uw:UserWService,private http: HttpClient, private authService:AuthService) {}
+ public card : CardInterface ={
+    userd:"",
+  	type:""
+  };
   	headers : HttpHeaders = new HttpHeaders({
   		"Content-Type":"application/json",
   		Authorization:this.authService.getToken()
@@ -64,21 +73,22 @@ export class DataApiService {
 
 
 
-	getCardById(id:string){
+	//getCardById(id:string){
 		// console.log(id);
-		let indice = id;
-		const url_api=`http://192.168.0.107:3000/api/card/${indice}`;
-		this.card = this.http.get(url_api);
-		return (this.card);
-	}
+		//let indice = id;
+		//const url_api=`http://192.168.0.107:3000/api/card/${indice}`;
+		//this.card = this.http.get(url_api);
+		//return (this.card);
+	//}
 
 
-	getCard(id:string){
+	 getCards(id:string){
 		let indice = id;
-		console.log("hola: ", id);
-		const url_api = 'http://192.168.0.107:3000/api/card?filter[where][idUser]={indice}';
+		//	console.log("indice de usuario a buscar en cards: ", indice);
+		//this.info=[];
+		const url_api = "http://192.168.0.107:3000/api/card?filter[where][userd]=a"+indice;
+		//this._uw.cards=this.http.get(url_api)
+		//return 
 		return this.http.get(url_api);
-
 	}
-
 }
