@@ -20,7 +20,7 @@ export class AffiliateComponent implements OnInit {
       
   ngOnInit() {
     if (this._uw.selectorA===false){
-      location.reload();
+    //  location.reload();
     }
   }
 

@@ -19,8 +19,55 @@
 												 
 
 								<div class="tr-single-body"  >
-									
-									<form id="msPartner">
+									<aw-wizard>
+										<aw-wizard-step stepTitle="Personal">
+											<div class="row" >
+												<div class="col-md-4 col-xs-12">
+													<label>Your. Phone</label>
+													<input type="text" class="form-control" placeholder="960 234 34 56" />
+												</div>
+											</div>
+					
+											<button type="button" awNextStep>next</button>
+										  </aw-wizard-step>
+
+										  <aw-wizard-step stepTitle="Company" awOptionalStep>
+										  	<div class="row" >
+												<div class="col-md-4 col-xs-12">
+													<label>Company Name</label>
+													<input type="text" class="form-control" placeholder="Company Name" />
+												</div> 
+												<div class="col-xs-12">
+													<label>Address</label>
+													<textarea class="form-control height-80" placeholder="Address"></textarea>
+												</div>
+												<div class="col-md-12 col-xs-12">
+													<label>URL</label>
+													<input type="text" class="form-control" placeholder="http://www.website.com" />
+												</div> 
+											</div>
+										      
+										    <button type="button" awPreviousStep>previous</button>
+										    <button type="button" awNextStep>next</button>
+										  </aw-wizard-step>
+										 
+										  <aw-wizard-step stepTitle="Finish">
+										    <div class="row">
+												<div class="col-md-12 text-center">
+													<i class="ti-thumb-up cl-success font-50"></i>
+													<h3 class="cl-success">Congratulations!</h3>
+													<p><strong>Hi Daniel</strong>, You Listing has been submitted successfully</p>
+												</div>
+											</div>
+										    <button type="button" awPreviousStep>Previous</button>
+										    <button type="button" (click)="finishFunction()">Finish</button>
+										  </aw-wizard-step>
+									</aw-wizard>
+
+
+
+
+								<!-- 	<form id="msPartner">
 									
 										<ul id="progressbar" >
 											<li class="active">Company</li>
@@ -73,7 +120,7 @@
 												</div>
 											</div>
 										</fieldset>
-									</form>	
+									</form>	 -->
 
 								</div>
 					

@@ -16,9 +16,6 @@ import {
 	PartnerComponent,
 	AffiliateComponent,
 	NewMemberComponent
-
-
-
 	}from "./components/index.paginas";
 	import { AuthGuard } from './guards/auth.guard';
 

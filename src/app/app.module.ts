@@ -4,6 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ArchwizardModule } from 'angular-archwizard';
+
 
 
 //RUTAS
@@ -118,8 +120,9 @@ import { AffiliateComponent } from './components/new-member/affiliate/affiliate.
     ReactiveFormsModule,
     MatBadgeModule,
     MatTableModule,
-CarouselModule,
-NgxSpinnerModule
+    CarouselModule,
+    NgxSpinnerModule,
+    ArchwizardModule
   ],
   exports: [
     MatButtonModule, MatCheckboxModule, MatTabsModule,MatDialogModule,MatIconModule,MatInputModule,
