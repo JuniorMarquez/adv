@@ -7,261 +7,88 @@
 								<div class="tr-single-header">
 									<h3 class="dashboard-title">Add Tix</h3>
 								</div>
+
 								<div class="tr-single-body">
-									
-									<form id="msform">
-									
-										<ul id="progressbar">
-											<li class="active">Basic Information</li>
-											<li>Prices</li>
-											<li>Proceed Payment</li>
-										</ul>
-									
-										<fieldset>
-											<div class="text-center">
-												<h2 class="fs-title">Basic Information</h2>
-												<h3 class="fs-subtitle">This is step 1</h3>
-											</div>
-											<div class="row">
-											
-												<div class="col-xs-6">
-													<label>Tittle</label>
-													<input type="text" class="form-control" placeholder="Tix tittle" />
+									<form class="form"[formGroup]="ngFormAddTix" (ngSubmit) ="onRegister()">
+										<aw-wizard >
+											<aw-wizard-step stepTitle="About">
+												<div class="row" >
+													<!-- <div class="col-md-4 col-xs-12">
+														<label>Tixs Name</label>
+														<input type="text" class="form-control" placeholder="Activity Name" />
+													</div> -->
+												
+												<div class="form-group" class="col-md-6 col-xs-12">
+													<label for="productName">Tix Name</label>
+													<input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Activity name" [(ngModel)]="this.productName"
+													[ngClass]="{ 'is-invalid': submitted && fval.productName.errors }"
+													 required>
+													 <div *ngIf="submitted && fval.productName.errors" class="invalid-feedback">
+														<div *ngIf="fval.productName.errors.required"><span class="errorLabel">
+														Tix Name is required and must be a valid name
+														</span>
+														</div>
+				  									 </div>
 												</div>
-											<!-- 	<div class="col-xs-6">	
-													<label>Upload Logo</label>
-													<div class="cf-input">
-														<label class="custom-file">
-														  <input type="file" id="file" class="custom-file-input">
-														  <span class="custom-file-control"></span>
-														</label>
+
+												<div class="col-md-6 col-xs-12">	
+														<label>Gallery</label>
+														<div class="cf-input">
+															<label class="custom-file">
+															  <input type="file" id="gallery" class="custom-file-input">
+															  <span class="custom-file-control"></span>
+															</label>
+														</div>
+													</div>
+													
+													<div class=" col-xs-12">
+														<label>Tix Description</label>
+														<textarea class="form-control height-80" placeholder="About tix"></textarea>
 													</div>
 												</div>
-												
-												<div class="col-xs-6">
-													<label>Ratting</label>
-													<div class="sl-box">
-														<select class="form-control wide">
-															<option>Hotel ratting</option>
-															<option>Normal</option>
-															<option>3 Start</option>
-															<option>4 Start</option>
-															<option>5 Start</option>
-															<option>7 Startg</option>
-														</select>
+												<button type="button" awNextStep (click)="firstStep()">next</button>
+											  </aw-wizard-step>
+
+											  <aw-wizard-step stepTitle="Prices" awOptionalStep>
+											  	<div class="row" >
+													<div class="col-md-4 col-xs-12">
+														<label>Label</label>
+														<input type="text" class="form-control" placeholder="Label" />
+													</div> 
+													<div class="col-md-4 col-xs-12">
+														<label>Retail price</label>
+														<input type="text" class="form-control" placeholder="Retail price" />
+													</div> 
+													<div class="col-md-12 col-xs-12">
+														<label>Net price</label>
+														<input type="text" class="form-control" placeholder="Net price" />
+													</div> 
+												</div>
+											      
+											    <button type="button" awPreviousStep>previous</button>
+											    <button type="button" awNextStep>next</button>
+											  </aw-wizard-step>
+											 
+											  <aw-wizard-step stepTitle="Booking">
+											    <div class="row">
+													<div class="col-md-12 text-center">
+														<i class="ti-thumb-up cl-success font-50"></i>
+														<h3 class="cl-success"></h3>
+														<p> The tixs has been submitted successfully</p>
 													</div>
+													 <div *ngIf="submitted && fval.productName.errors" class="invalid-feedback">
+														<div *ngIf="fval.productName.errors.required">
+														<span class="errorLabel">
+														*The Tix name is required and must be a valid name
+														</span>
+														</div>
+				  									 </div>
 												</div>
-												<div class="col-xs-6">	
-													<label>Charge/Night</label>
-													<input type="text" class="form-control" placeholder="$220" />
-												</div>
-												
-												<div class="col-xs-6">
-													<label>Phone</label>
-													<input type="text" class="form-control" placeholder="+91 254 875 8457" />
-												</div>
-												<div class="col-xs-6">	
-													<label>Landline</label>
-													<input type="text" class="form-control" placeholder="172 025 458" />
-												</div>
-												
-												<div class="col-xs-6">
-													<label>Email</label>
-													<input type="text" class="form-control" placeholder="yourht@gmail.com" />
-												</div>
-												<div class="col-xs-6">	
-													<label>Fax</label>
-													<input type="text" class="form-control" placeholder="fax" />
-												</div>
-												
-												<div class="col-xs-6">
-													<label>Address</label>
-													<input type="text" class="form-control" placeholder="#548, Near Big Market" />
-												</div>
-												<div class="col-xs-6">	
-													<label>City</label>
-													<input type="text" class="form-control" placeholder="city" />
-												</div>
-												
-												<div class="col-xs-6">
-													<label>State</label>
-													<input type="text" class="form-control" placeholder="state" />
-												</div>
-												<div class="col-xs-6">	
-													<label>Country</label>
-													<input type="text" class="form-control" placeholder="country" />
-												</div>
-												
-												<div class="col-xs-6">
-													<label>Owner Name</label>
-													<input type="text" class="form-control" placeholder="Daniel Duke" />
-												</div>
-												<div class="col-xs-6">	
-													<label>Owner Contact</label>
-													<input type="text" class="form-control" placeholder="987 584 5847" />
-												</div>
-												
-												<div class="col-xs-6">	
-													<label>Featured Iamge</label>
-													<div class="cf-input">
-														<label class="custom-file">
-														  <input type="file" id="featured-image" class="custom-file-input">
-														  <span class="custom-file-control"></span>
-														</label>
-													</div>
-												</div> -->
-												<div class="col-xs-6">	
-													<label>Upload Gallery</label>
-													<div class="cf-input">
-														<label class="custom-file">
-														  <input type="file" id="gallery" class="custom-file-input">
-														  <span class="custom-file-control"></span>
-														</label>
-													</div>
-												</div>
-												
-												<div class="col-xs-12">
-													<label>Tix Description</label>
-													<textarea class="form-control height-120" placeholder="About tix"></textarea>
-												</div>
-												
-											</div>
-											
-												<input type="button" name="next" class="next action-button" value="Next" />
-											
-										</fieldset>
-										
-										<fieldset>
-											<h2 class="fs-title">Available Amenities</h2>
-											<h3 class="fs-subtitle">Your presence on the social network</h3>
-											<div class="row">
-												<div class="col-md-12">
-													<ul class="add-amenities">
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="1">
-																<label for="1"></label>
-															</span>Satellite TV
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="2">
-																<label for="2"></label>
-															</span>Coffeemaker
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="3">
-																<label for="3"></label>
-															</span>Hair Dryer
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="4">
-																<label for="4"></label>
-															</span>Swimming Pool
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="5">
-																<label for="5"></label>
-															</span>Room Service
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="6">
-																<label for="6"></label>
-															</span>Luxury Bedding
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="7">
-																<label for="7"></label>
-															</span>Good Showers
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="8">
-																<label for="8"></label>
-															</span>Free Parking
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="9">
-																<label for="9"></label>
-															</span>Free Wifi
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="0">
-																<label for="0"></label>
-															</span>Bath towel
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="11">
-																<label for="11"></label>
-															</span>Free Coffee
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="12">
-																<label for="12"></label>
-															</span>Pets Allow
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="13">
-																<label for="13"></label>
-															</span>Hot Water
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="14">
-																<label for="14"></label>
-															</span>Attached garage 
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="15">
-																<label for="15"></label>
-															</span>Elevator
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="16">
-																<label for="16"></label>
-															</span>Spa/Sauna
-														</li>
-														<li>	
-															<span class="custom-checkbox">
-																<input type="checkbox" id="17">
-																<label for="17"></label>
-															</span>Indoor pool
-														</li>
-														<li>
-															<span class="custom-checkbox">
-																<input type="checkbox" id="18">
-																<label for="18"></label>
-															</span>Security cameras
-														</li>
-													</ul>	
-												</div>
-											</div>
-											<input type="button" name="previous" class="previous action-button" value="Previous" />
-											<input type="button" name="next" class="next action-button" value="Next" />
-										</fieldset>
-										
-										<fieldset>
-											<div class="row">
-												<div class="col-md-12 text-center">
-													<i class="ti-thumb-up cl-success font-50"></i>
-													<h3 class="cl-success">Congratulations!</h3>
-													<p><strong>Hi Daniel</strong>, You Listing has been submitted successfully</p>
-												</div>
-											</div>
-										</fieldset>
-									</form>
+											    <button type="button" awPreviousStep>Previous</button>
+											    <button type="submit" >Finish</button>
+											  </aw-wizard-step>
+										</aw-wizard>
+									</form>	
 										
 								</div>
 							</div>
