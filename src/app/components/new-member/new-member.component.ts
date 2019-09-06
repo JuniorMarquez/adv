@@ -26,16 +26,15 @@ selectorType:boolean=true;
       }
   }
 
-
  setPartner():void{
-    this.partner=true;
+    this.partner=false;
      this.router.navigate(['/new-member/partner']);
   }
   reset():void{
       
   }
   setAffiliate():void{
-    this.affiliate=true;
+    this.affiliate=false;
     this.router.navigate(['/new-member/affiliate']);
   }
 

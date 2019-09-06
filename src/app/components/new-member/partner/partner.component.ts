@@ -22,7 +22,7 @@ selectorType:boolean=true;
   		
 ngOnInit() {
     if (this._uw.selectorA===true){
-      location.reload();
+     location.reload();
     }
   }
 

@@ -6850,6 +6850,13 @@ label.btn-bs-file.btn {
 #msform,#progressbar li {
     position: relative
 }
+#formPartner,#progressbar li {
+    position: relative
+}
+#formAffiliate,#progressbar li {
+    position: relative
+}
+
 
 .message-avatar img {
     width: 54px;
@@ -6911,11 +6918,18 @@ label.btn-bs-file.btn {
     border: 0;
     box-sizing: border-box
 }
+#formAffiliate fieldset {
+    border: 0;
+    box-sizing: border-box
+}
+#formPartner fieldset {
+    border: 0;
+    box-sizing: border-box
+}
 
 #msform fieldset:not(:first-of-type) {
     display: none
 }
-
 #msform .action-button {
     width: 100px;
     background: #27AE60;
@@ -6927,8 +6941,42 @@ label.btn-bs-file.btn {
     padding: 10px 5px;
     margin: 10px 5px
 }
-
 #msform .action-button:focus,#msform .action-button:hover {
+    box-shadow: 0 0 0 2px #fff,0 0 0 3px #27AE60
+}
+#msAffiliate fieldset:not(:first-of-type) {
+    display: none
+}
+#msAffiliate .action-button {
+    width: 100px;
+    background: #27AE60;
+    font-weight: 700;
+    color: #fff;
+    border: 0;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+#msAffiliate .action-button:focus,#msAffiliate .action-button:hover {
+    box-shadow: 0 0 0 2px #fff,0 0 0 3px #27AE60
+}
+#msPartner fieldset:not(:first-of-type) {
+    display: none
+}
+#msPartner .action-button {
+    width: 100px;
+    background: #27AE60;
+    font-weight: 700;
+    color: #fff;
+    border: 0;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px
+}
+
+#msPartner.action-button:focus,#msmPartner .action-button:hover {
     box-shadow: 0 0 0 2px #fff,0 0 0 3px #27AE60
 }
 

@@ -15,17 +15,14 @@ import { Location } from '@angular/common';
   styleUrls: ['./affiliate.component.css']
 })
 export class AffiliateComponent implements OnInit {
-partner:boolean=false;
-affiliate:boolean=false;
-selectorType:boolean=true;  
+ 
   constructor(public _uw:UserWService, private location: Location, private router: Router) { }
       
   ngOnInit() {
-    if (this._uw.selectorA===true){
+    if (this._uw.selectorA===false){
       location.reload();
     }
   }
-
 
   reset():void{
        this._uw.selectorA=true;
